@@ -6,8 +6,14 @@ namespace AutoSauceDemoTest.BDD.Steps
     [Binding]
     public class Sauce_LoginStepDefinitions
     {
-        [Given(@"I enter a correct username and a correct password")]
-        public void GivenIEnterACorrectUsernameAndACorrectPassword()
+        [Given(@"I enter a correct username")]
+        public void GivenIEnterACorrectUsername()
+        {
+            throw new PendingStepException();
+        }
+
+        [Given(@"I enter a correct password")]
+        public void GivenIEnterACorrectPassword()
         {
             throw new PendingStepException();
         }
@@ -24,8 +30,8 @@ namespace AutoSauceDemoTest.BDD.Steps
             throw new PendingStepException();
         }
 
-        [Given(@"I enter a correct username and an incorrect password")]
-        public void GivenIEnterACorrectUsernameAndAnIncorrectPassword()
+        [Given(@"I enter an incorrect password")]
+        public void GivenIEnterAnIncorrectPassword()
         {
             throw new PendingStepException();
         }
@@ -36,10 +42,23 @@ namespace AutoSauceDemoTest.BDD.Steps
             throw new PendingStepException();
         }
 
-        [Given(@"I enter an incorrect username and a correct password")]
-        public void GivenIEnterAnIncorrectUsernameAndACorrectPassword()
+        [Given(@"I enter an incorrect username")]
+        public void GivenIEnterAnIncorrectUsername()
         {
             throw new PendingStepException();
         }
+
+        [Given(@"I do not enter a password")]
+        public void GivenIDoNotEnterAPassword()
+        {
+            throw new PendingStepException();
+        }
+
+        [Given(@"I do not enter a username")]
+        public void GivenIDoNotEnterAUsername()
+        {
+            throw new PendingStepException();
+        }
+
     }
 }
