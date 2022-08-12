@@ -12,12 +12,27 @@ public class Sauce_HomePage
     #region Properties and fields
     private IWebDriver _seleniumDriver;
     private string _homePageUrl = AppConfigReader.BaseUrl;
-    private IWebElement _loginLink => _seleniumDriver.FindElement(By.Id("login-button"));
+    private IWebElement _loginButton => _seleniumDriver.FindElement(By.Id("login-button"));
+    private IWebElement _emailField => _seleniumDriver.FindElement(By.Id("user-name"));
+    private IWebElement _passwordField => _seleniumDriver.FindElement(By.Id("password"));
 
     #endregion
     public Sauce_HomePage(IWebDriver seleniumDriver) => _seleniumDriver = seleniumDriver;
 
     #region Methods
     public void VisitHomePage() => _seleniumDriver.Navigate().GoToUrl(_homePageUrl);
+
+    public void InputEmail(string email)
+    {
+        _emailField.SendKeys(email);
+    }
+    public void InputPassword(string password)
+    {
+        _emailField.SendKeys(password);
+    }
+    public void ClickLogin()
+    {
+        _loginButton.Click();
+    }
     #endregion
 }
