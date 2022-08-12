@@ -19,6 +19,5 @@ public class Sauce_HomePage
 
     #region Methods
     public void VisitHomePage() => _seleniumDriver.Navigate().GoToUrl(_homePageUrl);
-    public void VisitLoginPage() => _LoginLink.Click();
     #endregion
 }
