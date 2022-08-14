@@ -11,7 +11,8 @@ namespace AutoSauceDemoTest.BDD.Steps;
 [Binding]
 public class Sauce_LoginStepDefinitions
 {
-    private Sauce_Website<ChromeDriver> Sauce_Website = new Sauce_Website<ChromeDriver>();
+    private Sauce_Website<ChromeDriver> Sauce_Website { get; } = new Sauce_Website<ChromeDriver>();
+
 
     [Given(@"I am on the home page")]
     public void GivenIAmOnTheHomePage()
@@ -52,25 +53,27 @@ public class Sauce_LoginStepDefinitions
     [Then(@"I should get an exception thrown")]
     public void ThenIShouldGetAnExceptionThrown()
     {
-        //Assert.That
+        var errorText = Sauce_Website.Sauce_HomePage.GetErrorMessageText();
+        Assert.That(errorText, Does.Exist);
+
     }
 
     [Given(@"I enter an incorrect username")]
     public void GivenIEnterAnIncorrectUsername()
     {
-        throw new PendingStepException();
+        Sauce_Website.Sauce_HomePage.InputEmail("incorrect");
     }
 
     [Given(@"I do not enter a password")]
     public void GivenIDoNotEnterAPassword()
     {
-        throw new PendingStepException();
+        
     }
 
     [Given(@"I do not enter a username")]
     public void GivenIDoNotEnterAUsername()
     {
-        throw new PendingStepException();
+        
     }
 
 }
