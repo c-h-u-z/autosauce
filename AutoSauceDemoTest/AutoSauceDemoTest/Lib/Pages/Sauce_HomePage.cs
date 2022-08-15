@@ -15,6 +15,7 @@ public class Sauce_HomePage
     private IWebElement _loginButton => _seleniumDriver.FindElement(By.Id("login-button"));
     private IWebElement _emailField => _seleniumDriver.FindElement(By.Id("user-name"));
     private IWebElement _passwordField => _seleniumDriver.FindElement(By.Id("password"));
+    private IWebElement _errorMessage => _seleniumDriver.FindElement(By.ClassName("error-message-container"));
 
     #endregion
     public Sauce_HomePage(IWebDriver seleniumDriver) => _seleniumDriver = seleniumDriver;
@@ -28,11 +29,16 @@ public class Sauce_HomePage
     }
     public void InputPassword(string password)
     {
-        _emailField.SendKeys(password);
+        _passwordField.SendKeys(password);
     }
     public void ClickLogin()
     {
         _loginButton.Click();
+    }
+
+    public string GetErrorMessageText()
+    {
+        return _errorMessage.FindElement(By.TagName("h3")).Text;
     }
     #endregion
 }

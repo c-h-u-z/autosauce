@@ -74,18 +74,18 @@ public class Sauce_LoginStepDefinitions
     [Given(@"I do not enter a password")]
     public void GivenIDoNotEnterAPassword()
     {
-
+        
     }
 
     [Given(@"I do not enter a username")]
     public void GivenIDoNotEnterAUsername()
     {
-
+        
     }
     [Given(@"I am on a search engine")]
     public void GivenIAmOnASearchEngine()
     {
-
+        
     }
 
     [When(@"i enter the web address for the products page")]

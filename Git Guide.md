@@ -1,6 +1,6 @@
 # Git steps
 
-## 1- Before you do some work
+## 1- Before you do some work (or if dev is updated)
 
 ```git checkout dev``` so that you are in dev branch
 
