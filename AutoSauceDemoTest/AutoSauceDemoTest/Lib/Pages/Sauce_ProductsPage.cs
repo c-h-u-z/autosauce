@@ -1,4 +1,6 @@
-﻿using System;
+﻿using OpenQA.Selenium;
+using Sauce_TestAutomationFramework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +15,10 @@ namespace AutoSauceDemoTest.Lib.Pages
         private string _productsPageUrl = AppConfigReader.InventoryUrl;
 
         #endregion
-        public Sauce_HomePage(IWebDriver seleniumDriver) => _seleniumDriver = seleniumDriver;
+        public Sauce_ProductsPage(IWebDriver seleniumDriver) => _seleniumDriver = seleniumDriver;
+
+        #region Methods
+
+        #endregion
     }
 }
