@@ -12,7 +12,7 @@ public class Sauce_SortStepDefinitions
     [Given(@"I am on the product page")]
     public void GivenIAmOnTheProductPage()
     {
-        throw new PendingStepException();
+        Sauce_Website.Sauce_HomePage.Login();
     }
 
     [When(@"I click the sort menu")]
@@ -30,7 +30,7 @@ public class Sauce_SortStepDefinitions
     [Given(@"I have clicked the sort menu")]
     public void GivenIHaveClickedTheSortMenu()
     {
-        throw new PendingStepException();
+        //Sauce_Website.ProductPage
     }
 
     [When(@"I click sort by name \(A to Z\)")]
