@@ -1,64 +1,112 @@
 using System;
 using TechTalk.SpecFlow;
+using Sauce_TestAutomationFramework;
+using Sauce_TestAutomationFramework.Lib;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Firefox;
 
-namespace AutoSauceDemoTest.BDD.Steps
+namespace AutoSauceDemoTest.BDD.Steps;
+
+[Binding]
+public class Sauce_LoginStepDefinitions
 {
-    [Binding]
-    public class Sauce_LoginStepDefinitions
+    private Sauce_Website<ChromeDriver> Sauce_Website { get; } = new Sauce_Website<ChromeDriver>();
+
+
+    [Given(@"I am on the home page")]
+    public void GivenIAmOnTheHomePage()
     {
-        [Given(@"I enter a correct username")]
-        public void GivenIEnterACorrectUsername()
-        {
-            throw new PendingStepException();
-        }
+        Sauce_Website.SeleniumDriver.Navigate().GoToUrl(AppConfigReader.BaseUrl);
+    }
 
-        [Given(@"I enter a correct password")]
-        public void GivenIEnterACorrectPassword()
-        {
-            throw new PendingStepException();
-        }
+    [Given(@"I enter a correct username")]
+    public void GivenIEnterACorrectUsername()
+    {
+        Sauce_Website.Sauce_HomePage.InputEmail("standard_user");
+    }
 
-        [When(@"I click the login button")]
-        public void WhenIClickTheLoginButton()
-        {
-            throw new PendingStepException();
-        }
+    [Given(@"I enter a correct password")]
+    public void GivenIEnterACorrectPassword()
+    {
+        Sauce_Website.Sauce_HomePage.InputPassword("secret_sauce");
+    }
 
-        [Then(@"I should be taken to the products page")]
-        public void ThenIShouldBeTakenToTheProductsPage()
-        {
-            throw new PendingStepException();
-        }
+    [When(@"I click the login button")]
+    public void WhenIClickTheLoginButton()
+    {
+        Sauce_Website.Sauce_HomePage.ClickLogin();
+    }
 
-        [Given(@"I enter an incorrect password")]
-        public void GivenIEnterAnIncorrectPassword()
-        {
-            throw new PendingStepException();
-        }
+    [Then(@"I should be taken to the products page")]
+    public void ThenIShouldBeTakenToTheProductsPage()
+    {
+        Assert.That(Sauce_Website.SeleniumDriver.Url, Is.EqualTo(AppConfigReader.InventoryUrl));
+    }
 
-        [Then(@"I should get an exception thrown")]
-        public void ThenIShouldGetAnExceptionThrown()
-        {
-            throw new PendingStepException();
-        }
+    [Given(@"I enter an incorrect password")]
+    public void GivenIEnterAnIncorrectPassword()
+    {
+        Sauce_Website.Sauce_HomePage.InputPassword("123456");
+    }
 
-        [Given(@"I enter an incorrect username")]
-        public void GivenIEnterAnIncorrectUsername()
-        {
-            throw new PendingStepException();
-        }
-
-        [Given(@"I do not enter a password")]
-        public void GivenIDoNotEnterAPassword()
-        {
-            throw new PendingStepException();
-        }
-
-        [Given(@"I do not enter a username")]
-        public void GivenIDoNotEnterAUsername()
-        {
-            throw new PendingStepException();
-        }
+    [Then(@"I should get an exception thrown")]
+    public void ThenIShouldGetAnExceptionThrown()
+    {
+        var errorText = Sauce_Website.Sauce_HomePage.GetErrorMessageText();
+        Assert.That(errorText, Does.Exist);
 
     }
+    [Then(@"I should get an exception thrown ""([^""]*)""")]
+    public void ThenIShouldGetAnExceptionThrown(string error)
+    {
+        var errorText = Sauce_Website.Sauce_HomePage.GetErrorMessageText();
+        Assert.That(errorText, Is.EqualTo(error));
+    }
+
+
+    [Given(@"I enter an incorrect username")]
+    public void GivenIEnterAnIncorrectUsername()
+    {
+        Sauce_Website.Sauce_HomePage.InputEmail("incorrect");
+    }
+
+    [Given(@"I do not enter a password")]
+    public void GivenIDoNotEnterAPassword()
+    {
+
+    }
+
+    [Given(@"I do not enter a username")]
+    public void GivenIDoNotEnterAUsername()
+    {
+
+    }
+    [Given(@"I am on a search engine")]
+    public void GivenIAmOnASearchEngine()
+    {
+
+    }
+
+    [When(@"i enter the web address for the products page")]
+    public void WhenIEnterTheWebAddressForTheProductsPage()
+    {
+        Sauce_Website.SeleniumDriver.Navigate().GoToUrl(AppConfigReader.InventoryUrl);
+    }
+
+    [Then(@"I should get an error ""([^""]*)""")]
+    public void ThenIShouldGetAnError(string error)
+    {
+        var errorText = Sauce_Website.Sauce_HomePage.GetErrorMessageText();
+        Assert.That(errorText, Is.EqualTo(error));
+    }
+
+
+
+    [AfterScenario]
+    public void DisposeWebDriver()
+    {
+        Sauce_Website.SeleniumDriver.Dispose();
+    }
+
 }
