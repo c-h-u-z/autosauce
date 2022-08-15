@@ -35,7 +35,12 @@ public class Sauce_HomePage
     {
         _loginButton.Click();
     }
-
+    public void Login() 
+    {
+        InputEmail("standard-user");
+        InputPassword("secret-sauce");
+        ClickLogin();
+    }
     public string GetErrorMessageText()
     {
         return _errorMessage.FindElement(By.TagName("h3")).Text;
