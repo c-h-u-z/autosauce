@@ -57,6 +57,13 @@ public class Sauce_LoginStepDefinitions
         Assert.That(errorText, Does.Exist);
 
     }
+    [Then(@"I should get an exception thrown ""([^""]*)""")]
+    public void ThenIShouldGetAnExceptionThrown(string error)
+    {
+        var errorText = Sauce_Website.Sauce_HomePage.GetErrorMessageText();
+        Assert.That(errorText, Is.EqualTo(error));
+    }
+
 
     [Given(@"I enter an incorrect username")]
     public void GivenIEnterAnIncorrectUsername()
@@ -74,6 +81,32 @@ public class Sauce_LoginStepDefinitions
     public void GivenIDoNotEnterAUsername()
     {
         
+    }
+    [Given(@"I am on a search engine")]
+    public void GivenIAmOnASearchEngine()
+    {
+        
+    }
+
+    [When(@"i enter the web address for the products page")]
+    public void WhenIEnterTheWebAddressForTheProductsPage()
+    {
+        Sauce_Website.SeleniumDriver.Navigate().GoToUrl(AppConfigReader.InventoryUrl);
+    }
+
+    [Then(@"I should get an error ""([^""]*)""")]
+    public void ThenIShouldGetAnError(string error)
+    {
+        var errorText = Sauce_Website.Sauce_HomePage.GetErrorMessageText();
+        Assert.That(errorText, Is.EqualTo(error));
+    }
+
+
+
+    [AfterScenario]
+    public void DisposeWebDriver()
+    {
+        Sauce_Website.SeleniumDriver.Dispose();
     }
 
 }
