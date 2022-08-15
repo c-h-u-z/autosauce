@@ -5,11 +5,11 @@ public class Sauce_SortSteps
 {
     Sauce_LoginSteps sauce_LoginSteps = new Sauce_LoginSteps();
 
-    [Given(@"I am signed in as standard_user on the product page")]
-    public void GivenIAmSignedInAsStandard_UserOnTheProductPage()
+    [Given(@"I am signed in with username ""([^""]*)"" and landed on product page")]
+    public void GivenIAmSignedInWithUsernameAndLandedOnProductPage(string username)
     {
         sauce_LoginSteps.GivenIAmOnTheHomePage();
-        sauce_LoginSteps.GivenIEnterTheUsernameStandard_User();
+        sauce_LoginSteps.GivenIEnterACorrectUsername(username);
         sauce_LoginSteps.GivenIEnterACorrectPassword();
         sauce_LoginSteps.WhenIClickTheLoginButton();
     }

@@ -11,10 +11,10 @@ public class Sauce_LoginSteps
         Sauce_Website.SeleniumDriver.Navigate().GoToUrl(AppConfigReader.BaseUrl);
     }
 
-    [Given(@"I enter the username standard_user")]
-    public void GivenIEnterTheUsernameStandard_User()
+    [Given(@"I enter a correct username ""([^""]*)""")]
+    public void GivenIEnterACorrectUsername(string username)
     {
-        Sauce_Website.Sauce_HomePage.InputEmail("standard_user");
+        Sauce_Website.Sauce_HomePage.InputEmail(username);
     }
 
     [Given(@"I enter a correct password")]

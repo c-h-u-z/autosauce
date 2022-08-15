@@ -7,18 +7,30 @@ So that I can use the site
 @HappyPath
 Scenario: Correct username and password
 Given I am on the home page 
-And I enter the username standard_user
+And I enter a correct username "<username>"
 And I enter a correct password
 When I click the login button
 Then I should be taken to the products page
+Examples:
+| username                |
+| standard_user           |
+| locked_out_user         |
+| problem_user            |
+| performance_glitch_user |
 
 @SadPath
 Scenario: Correct username incorrect password
 Given I am on the home page  
-And I enter the username standard_user
+And I enter a correct username "<username>"
 And I enter an incorrect password
 When I click the login button
 Then I should get an exception thrown "Epic sadface: Username and password do not match any user in this service"
+Examples:
+| username                |
+| standard_user           |
+| locked_out_user         |
+| problem_user            |
+| performance_glitch_user |
 
 @SadPath
 Scenario: Incorrect username correct password
@@ -31,10 +43,16 @@ Then I should get an exception thrown "Epic sadface: Username and password do no
 @SadPath
 Scenario: Correct username, without password
 Given I am on the home page 
-And I enter the username standard_user
+And I enter a correct username "<username>"
 And I do not enter a password
 When I click the login button
 Then I should get an exception thrown "Epic sadface: Password is required"
+Examples:
+| username                |
+| standard_user           |
+| locked_out_user         |
+| problem_user            |
+| performance_glitch_user |
 
 @SadPath
 Scenario: Incorrect username, without password

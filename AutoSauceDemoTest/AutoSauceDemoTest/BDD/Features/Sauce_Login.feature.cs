@@ -77,11 +77,21 @@ namespace AutoSauceDemoTest.BDD.Features
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Correct username and password")]
         [NUnit.Framework.CategoryAttribute("HappyPath")]
-        public void CorrectUsernameAndPassword()
+        [NUnit.Framework.TestCaseAttribute("standard_user", null)]
+        [NUnit.Framework.TestCaseAttribute("locked_out_user", null)]
+        [NUnit.Framework.TestCaseAttribute("problem_user", null)]
+        [NUnit.Framework.TestCaseAttribute("performance_glitch_user", null)]
+        public void CorrectUsernameAndPassword(string username, string[] exampleTags)
         {
-            string[] tagsOfScenario = new string[] {
+            string[] @__tags = new string[] {
                     "HappyPath"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("username", username);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Correct username and password", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 8
 this.ScenarioInitialize(scenarioInfo);
@@ -97,7 +107,7 @@ this.ScenarioInitialize(scenarioInfo);
 testRunner.Given("I am on the home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 10
-testRunner.And("I enter the username standard_user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And(string.Format("I enter a correct username \"{0}\"", username), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 11
 testRunner.And("I enter a correct password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -115,13 +125,23 @@ testRunner.Then("I should be taken to the products page", ((string)(null)), ((Te
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Correct username incorrect password")]
         [NUnit.Framework.CategoryAttribute("SadPath")]
-        public void CorrectUsernameIncorrectPassword()
+        [NUnit.Framework.TestCaseAttribute("standard_user", null)]
+        [NUnit.Framework.TestCaseAttribute("locked_out_user", null)]
+        [NUnit.Framework.TestCaseAttribute("problem_user", null)]
+        [NUnit.Framework.TestCaseAttribute("performance_glitch_user", null)]
+        public void CorrectUsernameIncorrectPassword(string username, string[] exampleTags)
         {
-            string[] tagsOfScenario = new string[] {
+            string[] @__tags = new string[] {
                     "SadPath"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("username", username);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Correct username incorrect password", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 16
+#line 22
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -131,19 +151,19 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 17
+#line 23
 testRunner.Given("I am on the home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 18
-testRunner.And("I enter the username standard_user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 24
+testRunner.And(string.Format("I enter a correct username \"{0}\"", username), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 19
+#line 25
 testRunner.And("I enter an incorrect password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 20
+#line 26
 testRunner.When("I click the login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 21
+#line 27
 testRunner.Then("I should get an exception thrown \"Epic sadface: Username and password do not matc" +
                         "h any user in this service\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -160,7 +180,7 @@ testRunner.Then("I should get an exception thrown \"Epic sadface: Username and p
                     "SadPath"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Incorrect username correct password", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 24
+#line 36
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -170,19 +190,19 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 25
+#line 37
 testRunner.Given("I am on the home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 26
+#line 38
 testRunner.And("I enter an incorrect username", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 27
+#line 39
 testRunner.And("I enter a correct password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 28
+#line 40
 testRunner.When("I click the login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 29
+#line 41
 testRunner.Then("I should get an exception thrown \"Epic sadface: Username and password do not matc" +
                         "h any user in this service\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -193,13 +213,23 @@ testRunner.Then("I should get an exception thrown \"Epic sadface: Username and p
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Correct username, without password")]
         [NUnit.Framework.CategoryAttribute("SadPath")]
-        public void CorrectUsernameWithoutPassword()
+        [NUnit.Framework.TestCaseAttribute("standard_user", null)]
+        [NUnit.Framework.TestCaseAttribute("locked_out_user", null)]
+        [NUnit.Framework.TestCaseAttribute("problem_user", null)]
+        [NUnit.Framework.TestCaseAttribute("performance_glitch_user", null)]
+        public void CorrectUsernameWithoutPassword(string username, string[] exampleTags)
         {
-            string[] tagsOfScenario = new string[] {
+            string[] @__tags = new string[] {
                     "SadPath"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("username", username);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Correct username, without password", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 32
+#line 44
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -209,19 +239,19 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 33
+#line 45
 testRunner.Given("I am on the home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 34
-testRunner.And("I enter the username standard_user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 46
+testRunner.And(string.Format("I enter a correct username \"{0}\"", username), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 35
+#line 47
 testRunner.And("I do not enter a password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 36
+#line 48
 testRunner.When("I click the login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 37
+#line 49
 testRunner.Then("I should get an exception thrown \"Epic sadface: Password is required\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -237,7 +267,7 @@ testRunner.Then("I should get an exception thrown \"Epic sadface: Password is re
                     "SadPath"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Incorrect username, without password", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 40
+#line 58
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -247,19 +277,19 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 41
+#line 59
 testRunner.Given("I am on the home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 42
+#line 60
 testRunner.And("I enter an incorrect username", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 43
+#line 61
 testRunner.And("I do not enter a password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 44
+#line 62
 testRunner.When("I click the login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 45
+#line 63
 testRunner.Then("I should get an exception thrown \"Epic sadface: Password is required\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -275,7 +305,7 @@ testRunner.Then("I should get an exception thrown \"Epic sadface: Password is re
                     "SadPath"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Correct password, without username", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 48
+#line 66
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -285,19 +315,19 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 49
+#line 67
 testRunner.Given("I am on the home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 50
+#line 68
 testRunner.And("I enter a correct password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 51
+#line 69
 testRunner.And("I do not enter a username", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 52
+#line 70
 testRunner.When("I click the login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 53
+#line 71
 testRunner.Then("I should get an exception thrown \"Epic sadface: Username is required\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -313,7 +343,7 @@ testRunner.Then("I should get an exception thrown \"Epic sadface: Username is re
                     "SadPath"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Incorrect password, without username", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 56
+#line 74
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -323,19 +353,19 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 57
+#line 75
 testRunner.Given("I am on the home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 58
+#line 76
 testRunner.And("I enter an incorrect password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 59
+#line 77
 testRunner.And("I do not enter a username", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 60
+#line 78
 testRunner.When("I click the login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 61
+#line 79
 testRunner.Then("I should get an exception thrown \"Epic sadface: Username is required\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -351,7 +381,7 @@ testRunner.Then("I should get an exception thrown \"Epic sadface: Username is re
                     "SadPath"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Access products without login", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 64
+#line 82
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -361,13 +391,13 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 65
+#line 83
 testRunner.Given("I am on a search engine", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 66
+#line 84
 testRunner.When("i enter the web address for the products page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 67
+#line 85
 testRunner.Then("I should get an error \"Epic sadface: You can only access \'/inventory.html\' when y" +
                         "ou are logged in.\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
