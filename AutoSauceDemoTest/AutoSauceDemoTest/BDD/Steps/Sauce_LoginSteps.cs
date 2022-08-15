@@ -1,18 +1,9 @@
-using System;
-using TechTalk.SpecFlow;
-using Sauce_TestAutomationFramework;
-using Sauce_TestAutomationFramework.Lib;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Firefox;
-using NUnit.Framework;
 namespace AutoSauceDemoTest.BDD.Steps;
 
 [Binding]
-public class Sauce_LoginStepDefinitions
+public class Sauce_LoginSteps
 {
     private Sauce_Website<ChromeDriver> Sauce_Website { get; } = new Sauce_Website<ChromeDriver>();
-
 
     [Given(@"I am on the home page")]
     public void GivenIAmOnTheHomePage()
@@ -20,8 +11,8 @@ public class Sauce_LoginStepDefinitions
         Sauce_Website.SeleniumDriver.Navigate().GoToUrl(AppConfigReader.BaseUrl);
     }
 
-    [Given(@"I enter a correct username")]
-    public void GivenIEnterACorrectUsername()
+    [Given(@"I enter the username standard_user")]
+    public void GivenIEnterTheUsernameStandard_User()
     {
         Sauce_Website.Sauce_HomePage.InputEmail("standard_user");
     }
@@ -55,15 +46,14 @@ public class Sauce_LoginStepDefinitions
     {
         var errorText = Sauce_Website.Sauce_HomePage.GetErrorMessageText();
         Assert.That(errorText, Does.Exist);
-
     }
+
     [Then(@"I should get an exception thrown ""([^""]*)""")]
     public void ThenIShouldGetAnExceptionThrown(string error)
     {
         var errorText = Sauce_Website.Sauce_HomePage.GetErrorMessageText();
         Assert.That(errorText, Is.EqualTo(error));
     }
-
 
     [Given(@"I enter an incorrect username")]
     public void GivenIEnterAnIncorrectUsername()
@@ -100,8 +90,6 @@ public class Sauce_LoginStepDefinitions
         var errorText = Sauce_Website.Sauce_HomePage.GetErrorMessageText();
         Assert.That(errorText, Is.EqualTo(error));
     }
-
-
 
     [AfterScenario]
     public void DisposeWebDriver()

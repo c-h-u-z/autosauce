@@ -1,8 +1,4 @@
-﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Firefox;
-
-namespace Sauce_TestAutomationFramework.Lib.DriverConfig;
+﻿namespace Sauce_TestAutomationFramework.Lib.DriverConfig;
 
 //Responsible for all the driver config
 public class SeleniumDriverConfig<T> where T : IWebDriver, new()

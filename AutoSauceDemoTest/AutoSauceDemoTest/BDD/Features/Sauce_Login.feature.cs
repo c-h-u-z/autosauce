@@ -97,7 +97,7 @@ this.ScenarioInitialize(scenarioInfo);
 testRunner.Given("I am on the home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 10
-testRunner.And("I enter a correct username", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I enter the username standard_user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 11
 testRunner.And("I enter a correct password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -135,7 +135,7 @@ this.ScenarioInitialize(scenarioInfo);
 testRunner.Given("I am on the home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 18
-testRunner.And("I enter a correct username", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I enter the username standard_user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 19
 testRunner.And("I enter an incorrect password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -213,7 +213,7 @@ this.ScenarioInitialize(scenarioInfo);
 testRunner.Given("I am on the home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 34
-testRunner.And("I enter a correct username", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I enter the username standard_user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 35
 testRunner.And("I do not enter a password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
