@@ -17,7 +17,6 @@ namespace AutoSauceDemoTest.Lib.Pages
         private IWebElement _postalCode => _seleniumDriver.FindElement(By.Id("postal-code"));
         private IWebElement _continueButton => _seleniumDriver.FindElement(By.Id("submit-button btn btn_primary cart_button btn_action"));
         private IWebElement _errorMessage => _seleniumDriver.FindElement(By.ClassName("error-button"));
-
         #endregion
         public Sauce_CheckoutPage1(IWebDriver seleniumDriver) => _seleniumDriver = seleniumDriver;
 
