@@ -37,8 +37,8 @@ public class Sauce_HomePage
     }
     public void Login() 
     {
-        InputEmail("standard-user");
-        InputPassword("secret-sauce");
+        InputEmail("standard_user");
+        InputPassword("secret_sauce");
         ClickLogin();
     }
     public string GetErrorMessageText()
