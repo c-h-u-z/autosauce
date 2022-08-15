@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sauce_TestAutomationFramework.Lib.Pages;
+namespace AutoSauceDemoTest.Lib.Pages;
 
 public class Sauce_HomePage
 {

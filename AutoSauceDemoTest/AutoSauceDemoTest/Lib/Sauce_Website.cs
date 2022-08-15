@@ -1,5 +1,5 @@
 ﻿using Sauce_TestAutomationFramework.Lib.DriverConfig;
-using Sauce_TestAutomationFramework.Lib.Pages;
+using AutoSauceDemoTest.Lib.Pages;
 using OpenQA.Selenium;
 
 namespace Sauce_TestAutomationFramework.Lib;
@@ -11,6 +11,7 @@ public class Sauce_Website<T> where T : IWebDriver, new()
     #region Accessible age Objects and Selenium Driver
     public IWebDriver SeleniumDriver { get; set; }
     public Sauce_HomePage Sauce_HomePage { get; set; }
+    public Sauce_ProductsPage Sauce_ProductsPage { get; set; };
 
     #endregion
     //Constructor for driver and config for teh service
