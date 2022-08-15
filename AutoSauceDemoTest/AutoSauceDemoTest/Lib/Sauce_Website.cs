@@ -12,8 +12,8 @@ public class Sauce_Website<T> where T : IWebDriver, new()
     public IWebDriver SeleniumDriver { get; set; }
     public Sauce_HomePage Sauce_HomePage { get; set; }
     public Sauce_ProductsPage Sauce_ProductsPage { get; set; }
-
     #endregion
+
     //Constructor for driver and config for teh service
     public Sauce_Website(int pageLoadInsecs = 10, int implicitWaitInSecs = 10, bool isHeadless = false)
     {

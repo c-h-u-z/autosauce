@@ -1,11 +1,4 @@
-﻿using OpenQA.Selenium;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Sauce_TestAutomationFramework;
-namespace AutoSauceDemoTest.Lib.Pages;
+﻿namespace AutoSauceDemoTest.Lib.Pages;
 
 public class Sauce_HomePage
 {
@@ -16,13 +9,12 @@ public class Sauce_HomePage
     private IWebElement _emailField => _seleniumDriver.FindElement(By.Id("user-name"));
     private IWebElement _passwordField => _seleniumDriver.FindElement(By.Id("password"));
     private IWebElement _errorMessage => _seleniumDriver.FindElement(By.ClassName("error-message-container"));
-
-    #endregion
     public Sauce_HomePage(IWebDriver seleniumDriver) => _seleniumDriver = seleniumDriver;
+    #endregion
+
 
     #region Methods
     public void VisitHomePage() => _seleniumDriver.Navigate().GoToUrl(_homePageUrl);
-
     public void InputEmail(string email)
     {
         _emailField.SendKeys(email);
