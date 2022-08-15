@@ -11,27 +11,23 @@ Then a menu displaying all sorting methods will appear
 @HappyPath
 Scenario: Sort Name (A to Z)
 Given I am on the product page
-And I have clicked the sort menu
-When I click sort by name (A to Z)
+When I click sort by "Name (A to Z)"
 Then the items will be sorted by name from A to Z
 
 @HappyPath
 Scenario: Sort Name (Z to A)
 Given I am on the product page
-And I have clicked the sort menu
-When I click sort by name (Z to A)
+When I click sort by "Name (Z to A)"
 Then the items will be sorted by name from Z to A
 
 @HappyPath
 Scenario: Sort Price (low to high)
 Given I am on the product page
-And I have clicked the sort menu
-When I click sort by price (low to high)
+When I click sort by "Price (low to high)"
 Then the items will be sorted by price from low to high
 
 @HappyPath
 Scenario: Sort Price (high to low)
 Given I am on the product page
-And I have clicked the sort menu
-When I click sort by price (high to low)
+When I click sort by "Price (high to low)"
 Then the items will be sorted by price from high to low

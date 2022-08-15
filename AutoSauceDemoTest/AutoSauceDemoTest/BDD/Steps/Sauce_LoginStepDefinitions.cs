@@ -5,7 +5,7 @@ using Sauce_TestAutomationFramework.Lib;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
-
+using NUnit.Framework;
 namespace AutoSauceDemoTest.BDD.Steps;
 
 [Binding]
