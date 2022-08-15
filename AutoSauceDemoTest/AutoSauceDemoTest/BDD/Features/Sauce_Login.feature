@@ -4,7 +4,7 @@ As a user with an account,
 I want to be able to log in 
 So that I can use the site
 
-@HappyPath
+@HappyPath 
 Scenario: Correct username and password
 Given I am on the home page 
 And I enter a correct username "<username>"

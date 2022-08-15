@@ -15,12 +15,15 @@
 
         #region Methods
         public string SortMenuActiveOption => _sortMenuActiveOption.Text;
+        public void ClickSortMenu() => _sortMenuSelectContainer.Click();
+        public void ChooseSortMethod(string sortMethod) => _sortMenuSelectElement.SelectByText(sortMethod);
+
         public List<string> InventoryItemNames =>
             _inventoryItems.Select(x => x.FindElement(By.ClassName("inventory_item_name")).Text).ToList();
         public List<float> InventoryItemPrices =>
             _inventoryItems.Select(x => (float)Math.Round(float.Parse(x.FindElement(By.ClassName("inventory_item_price")).Text.Remove(0,1)),2)).ToList();
-        public void ClickSortMenu() => _sortMenuSelectContainer.Click();
-        public void ChooseSortMethod(string sortMethod) => _sortMenuSelectElement.SelectByText(sortMethod);
+        
+        
         #endregion
     }
 }
