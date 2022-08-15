@@ -1,4 +1,5 @@
 using OpenQA.Selenium.Chrome;
+using Sauce_TestAutomationFramework;
 using Sauce_TestAutomationFramework.Lib;
 using System;
 using TechTalk.SpecFlow;
@@ -12,6 +13,7 @@ public class Sauce_SortStepDefinitions
     [Given(@"I am on the product page")]
     public void GivenIAmOnTheProductPage()
     {
+        Sauce_Website.SeleniumDriver.Navigate().GoToUrl(AppConfigReader.BaseUrl);
         Sauce_Website.Sauce_HomePage.Login();
     }
 
