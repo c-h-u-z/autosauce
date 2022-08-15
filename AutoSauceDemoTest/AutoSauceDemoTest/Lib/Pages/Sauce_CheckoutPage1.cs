@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AutoSauceDemoTest.Lib.Pages
 {
-    public class Sauce_CheckoutPage
+    public class Sauce_CheckoutPage1
     {
         #region Properties and fields
         private IWebDriver _seleniumDriver;
@@ -19,7 +19,7 @@ namespace AutoSauceDemoTest.Lib.Pages
         private IWebElement _errorMessage => _seleniumDriver.FindElement(By.ClassName("error-button"));
 
         #endregion
-        public Sauce_CheckoutPage(IWebDriver seleniumDriver) => _seleniumDriver = seleniumDriver;
+        public Sauce_CheckoutPage1(IWebDriver seleniumDriver) => _seleniumDriver = seleniumDriver;
 
         #region Methods
         public void VisitCheckoutPage() => _seleniumDriver.Navigate().GoToUrl(_checkoutStepOnePageUrl);

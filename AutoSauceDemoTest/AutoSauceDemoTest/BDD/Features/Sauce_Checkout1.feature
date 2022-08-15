@@ -1,8 +1,8 @@
-﻿Feature: Sauce_Checkout
+﻿Feature: Sauce_Checkout1
 
 As a user,
-I want to be able to checkout
-So that I can buy things listed on the website
+I want to be able to fill out my name and postal code
+So that I can continue to checkout
 
 @HappyPath
 Scenario: Have entered a first name, a last name, and a postal code
