@@ -3,7 +3,7 @@ namespace AutoSauceDemoTest.BDD.Steps;
 [Binding]
 public class Sauce_LoginSteps
 {
-    private Sauce_Website<ChromeDriver> Sauce_Website { get; } = new Sauce_Website<ChromeDriver>();
+    public Sauce_Website<ChromeDriver> Sauce_Website { get; } = new Sauce_Website<ChromeDriver>();
 
     [Given(@"I am on the home page")]
     public void GivenIAmOnTheHomePage()

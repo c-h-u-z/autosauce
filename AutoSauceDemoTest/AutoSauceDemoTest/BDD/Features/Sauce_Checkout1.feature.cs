@@ -20,22 +20,23 @@ namespace AutoSauceDemoTest.BDD.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Sauce_Sort")]
-    public partial class Sauce_SortFeature
+    [NUnit.Framework.DescriptionAttribute("Sauce_Checkout1")]
+    public partial class Sauce_Checkout1Feature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private static string[] featureTags = ((string[])(null));
         
-#line 1 "Sauce_Sort.feature"
+#line 1 "Sauce_Checkout1.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "BDD/Features", "Sauce_Sort", "A short summary of the feature", ProgrammingLanguage.CSharp, featureTags);
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "BDD/Features", "Sauce_Checkout1", "As a user,\r\nI want to be able to fill out my name and postal code\r\nSo that I can " +
+                    "continue to checkout", ProgrammingLanguage.CSharp, featureTags);
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -74,12 +75,12 @@ namespace AutoSauceDemoTest.BDD.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Sort Menu")]
+        [NUnit.Framework.DescriptionAttribute("Have entered a first name, a last name, and a postal code")]
         [NUnit.Framework.CategoryAttribute("HappyPath")]
         [NUnit.Framework.TestCaseAttribute("standard_user", null)]
         [NUnit.Framework.TestCaseAttribute("problem_user", null)]
         [NUnit.Framework.TestCaseAttribute("performance_glitch_user", null)]
-        public void SortMenu(string username, string[] exampleTags)
+        public void HaveEnteredAFirstNameALastNameAndAPostalCode(string username, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "HappyPath"};
@@ -90,40 +91,55 @@ namespace AutoSauceDemoTest.BDD.Features
             string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("username", username);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Sort Menu", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 6
-this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 7
-testRunner.Given(string.Format("I am signed in with username \"{0}\" and landed on product page", username), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Have entered a first name, a last name, and a postal code", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 8
-testRunner.When("I click the sort menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+this.ScenarioInitialize(scenarioInfo);
 #line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
 #line 9
-testRunner.Then("a menu displaying all sorting methods will appear", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Given(string.Format("I have signed in with username \"{0}\"", username), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 10
+testRunner.And("I have added an item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 11
+testRunner.And("I have clicked the cart and clicked checkout", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 12
+testRunner.And("I have entered a first name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 13
+testRunner.And("I have entered a last name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 14
+testRunner.And("I have entered a postal code", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 15
+testRunner.When("I click the continue button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 16
+testRunner.Then("I should be taken to the check out step two page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Sort Name (A to Z)")]
-        [NUnit.Framework.CategoryAttribute("HappyPath")]
+        [NUnit.Framework.DescriptionAttribute("Have not entered any first name, last name, or postal code")]
+        [NUnit.Framework.CategoryAttribute("SadPath")]
         [NUnit.Framework.TestCaseAttribute("standard_user", null)]
         [NUnit.Framework.TestCaseAttribute("problem_user", null)]
         [NUnit.Framework.TestCaseAttribute("performance_glitch_user", null)]
-        public void SortNameAToZ(string username, string[] exampleTags)
+        public void HaveNotEnteredAnyFirstNameLastNameOrPostalCode(string username, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "HappyPath"};
+                    "SadPath"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -131,8 +147,8 @@ testRunner.Then("a menu displaying all sorting methods will appear", ((string)(n
             string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("username", username);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Sort Name (A to Z)", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 17
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Have not entered any first name, last name, or postal code", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 24
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -142,70 +158,35 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 18
-testRunner.Given(string.Format("I am signed in with username \"{0}\" and landed on product page", username), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 25
+testRunner.Given(string.Format("I have signed in with username \"{0}\"", username), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 19
-testRunner.When("I click sort by \"Name (A to Z)\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 26
+testRunner.And("I have added an item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 20
-testRunner.Then("the items will be sorted by name from A to Z", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 27
+testRunner.And("I have clicked the cart and clicked checkout", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Sort Name (Z to A)")]
-        [NUnit.Framework.CategoryAttribute("HappyPath")]
-        [NUnit.Framework.TestCaseAttribute("standard_user", null)]
-        [NUnit.Framework.TestCaseAttribute("problem_user", null)]
-        [NUnit.Framework.TestCaseAttribute("performance_glitch_user", null)]
-        public void SortNameZToA(string username, string[] exampleTags)
-        {
-            string[] @__tags = new string[] {
-                    "HappyPath"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            string[] tagsOfScenario = @__tags;
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("username", username);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Sort Name (Z to A)", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 28
-this.ScenarioInitialize(scenarioInfo);
+testRunner.When("I click the continue button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
 #line 29
-testRunner.Given(string.Format("I am signed in with username \"{0}\" and landed on product page", username), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 30
-testRunner.When("I click sort by \"Name (Z to A)\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 31
-testRunner.Then("the items will be sorted by name from Z to A", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Then("I should be thrown an exception \"Error: First Name is required\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Sort Price (low to high)")]
-        [NUnit.Framework.CategoryAttribute("HappyPath")]
+        [NUnit.Framework.DescriptionAttribute("Have entered a first name, a last name, but not a postal code")]
+        [NUnit.Framework.CategoryAttribute("SadPath")]
         [NUnit.Framework.TestCaseAttribute("standard_user", null)]
         [NUnit.Framework.TestCaseAttribute("problem_user", null)]
         [NUnit.Framework.TestCaseAttribute("performance_glitch_user", null)]
-        public void SortPriceLowToHigh(string username, string[] exampleTags)
+        public void HaveEnteredAFirstNameALastNameButNotAPostalCode(string username, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "HappyPath"};
+                    "SadPath"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -213,8 +194,8 @@ testRunner.Then("the items will be sorted by name from Z to A", ((string)(null))
             string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("username", username);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Sort Price (low to high)", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 39
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Have entered a first name, a last name, but not a postal code", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 37
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -224,29 +205,41 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
+#line 38
+testRunner.Given(string.Format("I have signed in with username \"{0}\"", username), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 39
+testRunner.And("I have added an item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
 #line 40
-testRunner.Given(string.Format("I am signed in with username \"{0}\" and landed on product page", username), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.And("I have clicked the cart and clicked checkout", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 41
-testRunner.When("I click sort by \"Price (low to high)\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.And("I have entered a first name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 42
-testRunner.Then("the items will be sorted by price from low to high", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.And("I have entered a last name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 43
+testRunner.When("I click the continue button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 44
+testRunner.Then("I should be thrown an exception \"Error: Postal Code is required\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Sort Price (high to low)")]
-        [NUnit.Framework.CategoryAttribute("HappyPath")]
+        [NUnit.Framework.DescriptionAttribute("Have entered a first name, a postal code, but not a last name")]
+        [NUnit.Framework.CategoryAttribute("SadPath")]
         [NUnit.Framework.TestCaseAttribute("standard_user", null)]
         [NUnit.Framework.TestCaseAttribute("problem_user", null)]
         [NUnit.Framework.TestCaseAttribute("performance_glitch_user", null)]
-        public void SortPriceHighToLow(string username, string[] exampleTags)
+        public void HaveEnteredAFirstNameAPostalCodeButNotALastName(string username, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "HappyPath"};
+                    "SadPath"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -254,8 +247,8 @@ testRunner.Then("the items will be sorted by price from low to high", ((string)(
             string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("username", username);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Sort Price (high to low)", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 50
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Have entered a first name, a postal code, but not a last name", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 52
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -265,14 +258,79 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 51
-testRunner.Given(string.Format("I am signed in with username \"{0}\" and landed on product page", username), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 52
-testRunner.When("I click sort by \"Price (high to low)\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
 #line 53
-testRunner.Then("the items will be sorted by price from high to low", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Given(string.Format("I have signed in with username \"{0}\"", username), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 54
+testRunner.And("I have added an item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 55
+testRunner.And("I have clicked the cart and clicked checkout", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 56
+testRunner.And("I have entered a first name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 57
+testRunner.And("I have entered a postal code", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 58
+testRunner.When("I click the continue button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 59
+testRunner.Then("I should be thrown an exception \"Error: Last Name is required\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Have entered a last name, a postal code, but not a first name")]
+        [NUnit.Framework.CategoryAttribute("SadPath")]
+        [NUnit.Framework.TestCaseAttribute("standard_user", null)]
+        [NUnit.Framework.TestCaseAttribute("problem_user", null)]
+        [NUnit.Framework.TestCaseAttribute("performance_glitch_user", null)]
+        public void HaveEnteredALastNameAPostalCodeButNotAFirstName(string username, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "SadPath"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("username", username);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Have entered a last name, a postal code, but not a first name", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 67
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 68
+testRunner.Given(string.Format("I have signed in with username \"{0}\"", username), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 69
+testRunner.And("I have added an item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 70
+testRunner.And("I have clicked the cart and clicked checkout", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 71
+testRunner.And("I have entered a last name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 72
+testRunner.And("I have entered a postal code", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 73
+testRunner.When("I click the continue button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 74
+testRunner.Then("I should be thrown an exception \"Error: First Name is required\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
