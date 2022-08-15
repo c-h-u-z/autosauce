@@ -11,7 +11,7 @@ public class Sauce_Website<T> where T : IWebDriver, new()
     #region Accessible age Objects and Selenium Driver
     public IWebDriver SeleniumDriver { get; set; }
     public Sauce_HomePage Sauce_HomePage { get; set; }
-    public Sauce_ProductsPage Sauce_ProductsPage { get; set; };
+    public Sauce_ProductsPage Sauce_ProductsPage { get; set; }
 
     #endregion
     //Constructor for driver and config for teh service
@@ -21,5 +21,6 @@ public class Sauce_Website<T> where T : IWebDriver, new()
         SeleniumDriver = new SeleniumDriverConfig<T>(pageLoadInsecs, implicitWaitInSecs, isHeadless).Driver;
         //instatiate our page objects with the selenium driver
         Sauce_HomePage = new Sauce_HomePage(SeleniumDriver);
+        Sauce_ProductsPage = new Sauce_ProductsPage(SeleniumDriver);
     }
 }
