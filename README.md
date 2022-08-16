@@ -9,38 +9,38 @@ To test the website www.saucedemo.com using automated tests with Selenium and Sp
 
 ## Features tested
 
-### Logging in
+### 1. Logging in
 
-#### Happy path
+Happy path
 Correct usernames, correct password
 
-#### Sad paths
-Correct usernames, incorrect password
-Correct usernames, empty password
-Incorrect username, correct password
-Incorrect username, incorrect password
-Incorrect usernames, empty password
-Empty username, correct password
-Empty username, incorrect password
+Sad paths
+- Correct usernames, incorrect password
+- Correct usernames, empty password
+- Incorrect username, correct password
+- Incorrect username, incorrect password
+- Incorrect usernames, empty password
+- Empty username, correct password
+- Empty username, incorrect password
 
 
-### Products
+### 2. Products
 
 Adding items
 Removing items
 
 
-### Checking out
+### 3. Checking out
 #### Checking Out Step One
 
-##### Happy path
-Having entered first name, last name, postal code
+Happy path
+- Having entered first name, last name, postal code
 
 ##### Sad path
-Empty first name, last name, and postal code
-Empty first name
-Empty last name
-Empty postal code
+- Empty first name, last name, and postal code
+- Empty first name
+- Empty last name
+- Empty postal code
 
 #### Checking Out Step Two
 
