@@ -12,7 +12,7 @@ namespace AutoSauceDemoTest.Lib.Pages
         private IWebDriver _seleniumDriver;
         public Sauce_CartPage(IWebDriver seleniumDriver) => _seleniumDriver = seleniumDriver;
         private string _cartPageUrl = AppConfigReader.CartUrl;
-        private IWebElement _checkoutButton => _seleniumDriver.FindElement(By.ClassName("checkout"));
+        private IWebElement _checkoutButton => _seleniumDriver.FindElement(By.ClassName("checkout_button"));
         #endregion
 
         public void ClickCheckout()

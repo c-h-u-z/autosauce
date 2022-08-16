@@ -47,8 +47,7 @@ namespace AutoSauceDemoTest.BDD.Steps
         [Then(@"the item will be removed as shown in the cart page")]
         public void ThenTheItemWillBeRemovedAsShownInTheCartPage()
         {
-            var cartList = sauce_LoginSteps.Sauce_Website.SeleniumDriver.FindElement(By.ClassName("cart_list"));
-            Assert.That(cartList, Is.Empty);
+            Assert.That(() => sauce_LoginSteps.Sauce_Website.SeleniumDriver.FindElement(By.ClassName("cart_list")).FindElement(By.ClassName("cart_item")), Throws.Exception);
         }
         [AfterScenario]
         public void DisposeWebDriver()

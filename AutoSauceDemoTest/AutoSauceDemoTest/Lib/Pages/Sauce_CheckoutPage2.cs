@@ -28,7 +28,7 @@ namespace AutoSauceDemoTest.Lib.Pages
         private IWebElement _cancelButton => _seleniumDriver.FindElement(By.Id("cancel"));
         #endregion
 
-
+        public Sauce_CheckoutPage2(IWebDriver seleniumDriver) => _seleniumDriver = seleniumDriver;
         #region Methods
         public void ClickFinish()
         {

@@ -23,7 +23,7 @@
         private IWebElement _addJacket => _seleniumDriver.FindElement(By.Id("add-to-cart-sauce-labs-fleece-jacket"));
         private IWebElement _addOnesie => _seleniumDriver.FindElement(By.Id("add-to-cart-sauce-labs-onesie"));
         private IWebElement _addRedT => _seleniumDriver.FindElement(By.Id("add-to-cart-test.allthethings()-t-shirt-(red)"));
-        private IWebElement _removeBackpack => _seleniumDriver.FindElement(By.Id("remove-to-cart-sauce-labs-backpack"));
+        private IWebElement _removeBackpack => _seleniumDriver.FindElement(By.Id("remove-sauce-labs-backpack"));
         private IWebElement _removeBikeLight => _seleniumDriver.FindElement(By.Id("remove-sauce-labs-bike-light"));
         private IWebElement _removeBoltT => _seleniumDriver.FindElement(By.Id("remove-sauce-labs-bolt-t-shirt"));
         private IWebElement _removeJacket => _seleniumDriver.FindElement(By.Id("remove-sauce-labs-fleece-jacket"));
