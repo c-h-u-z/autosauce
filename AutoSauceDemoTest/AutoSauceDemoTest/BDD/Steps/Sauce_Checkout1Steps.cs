@@ -1,3 +1,4 @@
+using Sauce_TestAutomationFramework.Lib;
 using System;
 using TechTalk.SpecFlow;
 
@@ -57,6 +58,11 @@ namespace AutoSauceDemoTest.BDD.Steps
         {
             var errorMessage = sauce_productsSteps.sauce_LoginSteps.Sauce_Website.Sauce_CheckoutPage1.GetErrorMessageText;
             Assert.That(errorMessage, Is.EqualTo(expectedErrorMessage));
+        }
+        [AfterScenario]
+        public void DisposeWebDriver()
+        {
+            sauce_productsSteps.sauce_LoginSteps.Sauce_Website.SeleniumDriver.Dispose();
         }
     }
 }

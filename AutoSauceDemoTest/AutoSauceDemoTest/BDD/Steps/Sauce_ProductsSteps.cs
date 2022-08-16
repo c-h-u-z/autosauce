@@ -1,3 +1,4 @@
+using Sauce_TestAutomationFramework.Lib;
 using System;
 using TechTalk.SpecFlow;
 
@@ -48,6 +49,11 @@ namespace AutoSauceDemoTest.BDD.Steps
         {
             var cartList = sauce_LoginSteps.Sauce_Website.SeleniumDriver.FindElement(By.ClassName("cart_list"));
             Assert.That(cartList, Is.Empty);
+        }
+        [AfterScenario]
+        public void DisposeWebDriver()
+        {
+            sauce_LoginSteps.Sauce_Website.SeleniumDriver.Dispose();
         }
     }
 }
