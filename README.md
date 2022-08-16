@@ -42,6 +42,9 @@ Sad path
 
 #### Checking Out Step Two
 
+Happy paths
+- finishing the transaction
+- canceling the transaction
 
 ## Defects found
 
