@@ -1,3 +1,4 @@
+using Sauce_TestAutomationFramework.Lib;
 using System;
 using TechTalk.SpecFlow;
 
@@ -27,6 +28,11 @@ namespace AutoSauceDemoTest.BDD.Steps
         public void ThenIShouldBeTakenToTheCheckoutPage()
         {
             sauce_ProductsSteps.sauce_LoginSteps.Sauce_Website.SeleniumDriver.Navigate().GoToUrl(AppConfigReader.CartUrl);
+        }
+        [AfterScenario]
+        public void DisposeWebDriver()
+        {
+            sauce_ProductsSteps.sauce_LoginSteps.Sauce_Website.SeleniumDriver.Dispose();
         }
     }
 }
