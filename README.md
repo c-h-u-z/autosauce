@@ -1,9 +1,6 @@
 # autosauce
 Mini Automated Web Testing Project - Engineering 120
 
-# autosauce
-Mini Automated Web Testing Project - Engineering 120
-
 ## Project goal
 To test the website www.saucedemo.com using automated tests with Selenium and Specflow and to report any defects found
 
