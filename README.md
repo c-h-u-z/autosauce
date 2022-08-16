@@ -44,15 +44,15 @@ Happy path
 
 ## Defects found
 
-### Logging in
+### 1. Logging in
 locked_out_user cannot log in
 ![pic1](pic1.png)
 
-### Products
+### 2. Products
 problem_user cannot remove item
 ![pic2](pic2.png)
 
-### Checking out
+### 3. Checking out
 
 
 ## Project progress
