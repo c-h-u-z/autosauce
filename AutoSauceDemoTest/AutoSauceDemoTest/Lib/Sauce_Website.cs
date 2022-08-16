@@ -25,5 +25,8 @@ public class Sauce_Website<T> where T : IWebDriver, new()
         //instatiate our page objects with the selenium driver
         Sauce_HomePage = new Sauce_HomePage(SeleniumDriver);
         Sauce_ProductsPage = new Sauce_ProductsPage(SeleniumDriver);
+        Sauce_CartPage = new Sauce_CartPage(SeleniumDriver);
+        Sauce_CheckoutPage1 = new Sauce_CheckoutPage1(SeleniumDriver);
+        Sauce_CheckoutPage2 = new Sauce_CheckoutPage2(SeleniumDriver);
     }
 }
