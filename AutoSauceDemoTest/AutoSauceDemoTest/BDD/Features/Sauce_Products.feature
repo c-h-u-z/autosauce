@@ -20,7 +20,7 @@ Examples:
 Scenario: Removing items
 Given I have signed in with username "<username>" and landed on the product page
 And I have added a backpack
-And I click remove backpack
+And I have removed backpack
 When I click the cart
 Then the item will be removed as shown in the cart page
 Examples:
