@@ -9,7 +9,7 @@ To test the website www.saucedemo.com using automated tests with Selenium and Sp
 ### 1. Logging in
 
 Happy path
-Correct usernames, correct password
+- Correct usernames, correct password
 
 Sad paths
 - Correct usernames, incorrect password
