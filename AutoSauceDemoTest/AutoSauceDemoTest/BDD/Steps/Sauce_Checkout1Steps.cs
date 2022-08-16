@@ -1,8 +1,7 @@
-using AutoSauceDemoTest.BDD.Steps;
 using System;
 using TechTalk.SpecFlow;
 
-namespace AutoSauceDemoTest
+namespace AutoSauceDemoTest.BDD.Steps
 {
     [Binding]
     public class Sauce_Checkout1Steps
