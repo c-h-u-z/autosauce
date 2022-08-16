@@ -56,8 +56,6 @@ locked_out_user cannot log in
 problem_user cannot remove item
 ![pic2](pic2.png)
 
-### 3. Checking out
-
 
 ## Project progress
 
