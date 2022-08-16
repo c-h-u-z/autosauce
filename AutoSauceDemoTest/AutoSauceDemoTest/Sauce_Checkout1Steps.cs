@@ -1,17 +1,24 @@
+using AutoSauceDemoTest.BDD.Steps;
 using System;
 using TechTalk.SpecFlow;
 
-namespace AutoSauceDemoTest.BDD.Steps
+namespace AutoSauceDemoTest
 {
     [Binding]
     public class Sauce_Checkout1Steps
     {
         public Sauce_ProductsSteps sauce_productsSteps { get; } = new Sauce_ProductsSteps();
-
-        [Given(@"I have clicked the cart and clicked checkout")]
-        public void GivenIHaveClickedTheCartAndClickedCheckout()
+        [Given(@"I have signed in with username ""([^""]*)"", added a backpack, clicked the cart")]
+        public void GivenIHaveSignedInWithUsernameAddedABackpackClickedTheCart(string username)
         {
+            sauce_productsSteps.GivenIHaveSignedInWithUsernameAndLandedOnTheProductPage(username);
+            sauce_productsSteps.GivenIHaveAddedABackpack();
             sauce_productsSteps.WhenIClickTheCart();
+        }
+
+        [Given(@"I have clicked checkout")]
+        public void GivenIHaveClickedCheckout()
+        {
             sauce_productsSteps.sauce_LoginSteps.Sauce_Website.Sauce_CartPage.ClickCheckout();
         }
 
@@ -51,12 +58,6 @@ namespace AutoSauceDemoTest.BDD.Steps
         {
             var errorMessage = sauce_productsSteps.sauce_LoginSteps.Sauce_Website.Sauce_CheckoutPage1.GetErrorMessageText;
             Assert.That(errorMessage, Is.EqualTo(expectedErrorMessage));
-        }
-
-        [Given(@"I have signed in with username ""([^""]*)""")]
-        public void GivenIHaveSignedInWithUsername(string p0)
-        {
-            throw new PendingStepException();
         }
     }
 }

@@ -10,6 +10,8 @@ namespace AutoSauceDemoTest.Lib.Pages
     {
         #region Properties and fields
         private IWebDriver _seleniumDriver;
+        public Sauce_CartPage(IWebDriver seleniumDriver) => _seleniumDriver = seleniumDriver;
+        private string _cartPageUrl = AppConfigReader.CartUrl;
         private IWebElement _checkoutButton => _seleniumDriver.FindElement(By.ClassName("checkout"));
         #endregion
 

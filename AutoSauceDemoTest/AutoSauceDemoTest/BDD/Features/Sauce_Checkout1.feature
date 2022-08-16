@@ -6,9 +6,8 @@ So that I can continue to checkout
 
 @HappyPath
 Scenario: Have entered a first name, a last name, and a postal code
-Given I have signed in with username "<username>" and landed on the product page
-And I have added a backpack
-And I have clicked the cart and clicked checkout
+Given I have signed in with username "<username>", added a backpack, clicked the cart
+And I have clicked checkout
 And I have entered a first name
 And I have entered a last name
 And I have entered a postal code
@@ -22,9 +21,7 @@ Examples:
 
 @SadPath
 Scenario: Have not entered any first name, last name, or postal code
-Given I have signed in with username "<username>" and landed on the product page
-And I have added a backpack
-And I have clicked the cart and clicked checkout
+Given I have signed in with username "<username>", added a backpack, clicked the cart, and clicked checkout
 When I click the continue button
 Then I should be thrown an exception "Error: First Name is required"
 Examples:
@@ -35,9 +32,7 @@ Examples:
 
 @SadPath
 Scenario: Have entered a first name, a last name, but not a postal code
-Given I have signed in with username "<username>" and landed on the product page
-And I have added a backpack
-And I have clicked the cart and clicked checkout
+Given I have signed in with username "<username>", added a backpack, clicked the cart, and clicked checkout
 And I have entered a first name
 And I have entered a last name
 When I click the continue button
@@ -50,9 +45,7 @@ Examples:
 
 @SadPath
 Scenario: Have entered a first name, a postal code, but not a last name
-Given I have signed in with username "<username>" and landed on the product page
-And I have added a backpack
-And I have clicked the cart and clicked checkout
+Given I have signed in with username "<username>", added a backpack, clicked the cart, and clicked checkout
 And I have entered a first name
 And I have entered a postal code
 When I click the continue button
@@ -65,9 +58,7 @@ Examples:
 
 @SadPath
 Scenario: Have entered a last name, a postal code, but not a first name
-Given I have signed in with username "<username>" and landed on the product page
-And I have added a backpack
-And I have clicked the cart and clicked checkout
+Given I have signed in with username "<username>", added a backpack, clicked the cart, and clicked checkout
 And I have entered a last name
 And I have entered a postal code
 When I click the continue button
