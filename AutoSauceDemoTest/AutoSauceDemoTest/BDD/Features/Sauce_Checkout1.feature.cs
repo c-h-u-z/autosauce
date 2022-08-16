@@ -103,10 +103,10 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 9
-testRunner.Given(string.Format("I have signed in with username \"{0}\"", username), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.Given(string.Format("I have signed in with username \"{0}\" and landed on the product page", username), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 10
-testRunner.And("I have added an item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I have added a backpack", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 11
 testRunner.And("I have clicked the cart and clicked checkout", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -159,10 +159,10 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 25
-testRunner.Given(string.Format("I have signed in with username \"{0}\"", username), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.Given(string.Format("I have signed in with username \"{0}\" and landed on the product page", username), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 26
-testRunner.And("I have added an item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I have added a backpack", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 27
 testRunner.And("I have clicked the cart and clicked checkout", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -206,10 +206,10 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 38
-testRunner.Given(string.Format("I have signed in with username \"{0}\"", username), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.Given(string.Format("I have signed in with username \"{0}\" and landed on the product page", username), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 39
-testRunner.And("I have added an item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I have added a backpack", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 40
 testRunner.And("I have clicked the cart and clicked checkout", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -259,10 +259,10 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 53
-testRunner.Given(string.Format("I have signed in with username \"{0}\"", username), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.Given(string.Format("I have signed in with username \"{0}\" and landed on the product page", username), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 54
-testRunner.And("I have added an item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I have added a backpack", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 55
 testRunner.And("I have clicked the cart and clicked checkout", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -312,10 +312,10 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 68
-testRunner.Given(string.Format("I have signed in with username \"{0}\"", username), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.Given(string.Format("I have signed in with username \"{0}\" and landed on the product page", username), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 69
-testRunner.And("I have added an item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I have added a backpack", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 70
 testRunner.And("I have clicked the cart and clicked checkout", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

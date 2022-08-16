@@ -6,7 +6,7 @@ namespace AutoSauceDemoTest.BDD.Steps
     [Binding]
     public class Sauce_ProductsSteps
     {
-        Sauce_LoginSteps sauce_LoginSteps = new Sauce_LoginSteps();
+        public Sauce_LoginSteps sauce_LoginSteps { get; } = new Sauce_LoginSteps();
 
         [Given(@"I have signed in with username ""([^""]*)"" and landed on the product page")]
         public void GivenIHaveSignedInWithUsernameAndLandedOnTheProductPage(string username)
@@ -32,20 +32,22 @@ namespace AutoSauceDemoTest.BDD.Steps
         [Then(@"the item will be added as shown in the cart page")]
         public void ThenTheItemWillBeAddedAsShownInTheCartPage()
         {
-            var inventory = sauce_LoginSteps.Sauce_Website.SeleniumDriver.FindElement(By.Id("item_4_title_link")).FindElement(By.ClassName("inventory_item_name")).Text;
-            Assert.That(inventory, Is.EqualTo("Sauce Labs Backpack"));
+            var inventoryName = sauce_LoginSteps.Sauce_Website.SeleniumDriver.FindElement(By.Id("item_4_title_link")).FindElement(By.ClassName("inventory_item_name")).Text;
+            Assert.That(inventoryName, Is.EqualTo("Sauce Labs Backpack"));
         }
 
-        [Given(@"I click remove backpack")]
-        public void GivenIClickRemoveBackpack()
+        [Given(@"I have removed backpack")]
+        public void GivenIHaveRemovedBackpack()
         {
             sauce_LoginSteps.Sauce_Website.Sauce_ProductsPage.RemoveBackpack();
         }
 
+
         [Then(@"the item will be removed as shown in the cart page")]
         public void ThenTheItemWillBeRemovedAsShownInTheCartPage()
         {
-            throw new PendingStepException();
+            var cartList = sauce_LoginSteps.Sauce_Website.SeleniumDriver.FindElement(By.ClassName("cart_list"));
+            Assert.That(cartList, Is.Empty);
         }
     }
 }

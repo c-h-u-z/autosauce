@@ -12,6 +12,9 @@ public class Sauce_Website<T> where T : IWebDriver, new()
     public IWebDriver SeleniumDriver { get; set; }
     public Sauce_HomePage Sauce_HomePage { get; set; }
     public Sauce_ProductsPage Sauce_ProductsPage { get; set; }
+    public Sauce_CartPage Sauce_CartPage { get; set; }
+    public Sauce_CheckoutPage1 Sauce_CheckoutPage1 { get; set; }
+    public Sauce_CheckoutPage2 Sauce_CheckoutPage2 { get; set; }
     #endregion
 
     //Constructor for driver and config for teh service

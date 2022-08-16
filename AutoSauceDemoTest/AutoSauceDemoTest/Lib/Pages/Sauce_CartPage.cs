@@ -13,8 +13,6 @@ namespace AutoSauceDemoTest.Lib.Pages
         private IWebElement _checkoutButton => _seleniumDriver.FindElement(By.ClassName("checkout"));
         #endregion
 
-        //item_4_title_link
-
         public void ClickCheckout()
         {
             _checkoutButton.Click();

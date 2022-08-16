@@ -16,22 +16,22 @@ namespace AutoSauceDemoTest.Lib.Pages
         private IWebElement _lastName => _seleniumDriver.FindElement(By.Id("last-name"));
         private IWebElement _postalCode => _seleniumDriver.FindElement(By.Id("postal-code"));
         private IWebElement _continueButton => _seleniumDriver.FindElement(By.Id("submit-button btn btn_primary cart_button btn_action"));
-        private IWebElement _errorMessage => _seleniumDriver.FindElement(By.ClassName("error-button"));
+        private IWebElement _errorMessage => _seleniumDriver.FindElement(By.ClassName("error-message-container error"));
         #endregion
         public Sauce_CheckoutPage1(IWebDriver seleniumDriver) => _seleniumDriver = seleniumDriver;
 
         #region Methods
         public void VisitCheckoutPage() => _seleniumDriver.Navigate().GoToUrl(_checkoutStepOnePageUrl);
 
-        public void InputFirstName(string firstName)
+        public void InputFirstName(string firstName = "First Name")
         {
             _firstName.SendKeys(firstName);
         }
-        public void InputLastName(string lastName)
+        public void InputLastName(string lastName = "Last Name")
         {
             _lastName.SendKeys(lastName);
         }
-        public void InputPostalCode(string postalCode)
+        public void InputPostalCode(string postalCode = "Postal Code")
         {
             _postalCode.SendKeys(postalCode);
         }

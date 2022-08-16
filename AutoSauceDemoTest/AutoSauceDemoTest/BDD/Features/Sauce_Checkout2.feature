@@ -6,8 +6,8 @@ So that I can complete my transaction
 
 @HappyPath
 Scenario: Finish the transaction
-Given I have signed in with username "<username>"
-And I have added an item
+Given I have signed in with username "<username>" and landed on the product page
+And I have added a backpack
 And I have clicked the cart and clicked checkout
 And I have entered a first name
 And I have entered a last name
@@ -23,8 +23,8 @@ Examples:
 
 @HappyPath
 Scenario: Cancel the transaction
-Given I have signed in with username "<username>"
-And I have added an item
+Given I have signed in with username "<username>" and landed on the product page
+And I have added a backpack
 And I have clicked the cart and clicked checkout
 And I have entered a first name
 And I have entered a last name
