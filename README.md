@@ -23,8 +23,9 @@ Sad paths
 
 ### 2. Products
 
-Adding items
-Removing items
+Happy paths
+- Adding items
+- Removing items
 
 
 ### 3. Checking out
@@ -33,7 +34,7 @@ Removing items
 Happy path
 - Having entered first name, last name, postal code
 
-##### Sad path
+Sad path
 - Empty first name, last name, and postal code
 - Empty first name
 - Empty last name
